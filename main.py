@@ -11,7 +11,6 @@ PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
 PINECONE_INDEX_NAME = os.environ.get("PINECONE_INDEX_NAME")
 PINECONE_ENVIRONMENT = os.environ.get("PINECONE_ENVIRONMENT")
 
-
 # === Inicializa Pinecone
 pc = PineconeClient(api_key=PINECONE_API_KEY)
 index = pc.Index(PINECONE_INDEX_NAME)
@@ -19,14 +18,15 @@ index = pc.Index(PINECONE_INDEX_NAME)
 # === Cria o vectorstore
 vectorstore = Pinecone(
     index=index,
-    embedding=OpenAIEmbeddings(),
+    embedding=OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY),
     text_key="text"
 )
 
 # === Inicializa modelo da OpenAI
 llm = ChatOpenAI(
     temperature=0,
-    model_name="gpt-4"
+    model_name="gpt-4",
+    openai_api_key=OPENAI_API_KEY
 )
 
 # === RAG
