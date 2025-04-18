@@ -5,7 +5,7 @@ from langchain_pinecone import Pinecone
 from langchain.chains import RetrievalQA
 from pinecone import Pinecone as PineconeClient
 
-# === CHAVES
+# === CHAVES via Environment Variables (Render)
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
 PINECONE_INDEX_NAME = os.environ.get("PINECONE_INDEX_NAME")
