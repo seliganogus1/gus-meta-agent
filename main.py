@@ -6,10 +6,11 @@ from langchain.chains import RetrievalQA
 from pinecone import Pinecone as PineconeClient
 
 # === CHAVES
-os.environ["OPENAI_API_KEY"] = "SUA_OPENAI_API_KEY_AQUI"
-OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
-PINECONE_API_KEY = "SUA_PINECONE_API_KEY_AQUI"
-PINECONE_INDEX_NAME = "meta-docs"
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
+PINECONE_INDEX_NAME = os.environ.get("PINECONE_INDEX_NAME")
+PINECONE_ENVIRONMENT = os.environ.get("PINECONE_ENVIRONMENT")
+
 
 # === Inicializa Pinecone
 pc = PineconeClient(api_key=PINECONE_API_KEY)
