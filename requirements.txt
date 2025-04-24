@@ -3,3 +3,4 @@ openai
 langchain
 pinecone-client
 langchain-openai
+langchain-community
