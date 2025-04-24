@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Gus Meta Agent</title>
+</head>
+<body>
+  <h1>Gus Meta Agent</h1>
+  <form method="post">
+    <input type="text" name="question" placeholder="Faça sua pergunta" required>
+    <button type="submit">Enviar</button>
+  </form>
+  {% if question %}
+    <p><strong>Você:</strong> {{ question }}</p>
+    <p><strong>Gus Meta Agent:</strong> {{ answer }}</p>
+  {% endif %}
+</body>
+</html>
