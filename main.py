@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 from langchain.chains import RetrievalQA
 from langchain_openai import ChatOpenAI
-from langchain.vectorstores import Pinecone
+from langchain_community.vectorstores import Pinecone
 from langchain.embeddings import OpenAIEmbeddings
 import os
 import pinecone
