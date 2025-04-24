@@ -1,6 +1,7 @@
 flask
 openai
 langchain
-pinecone
 langchain-openai
 langchain-community
+langchain-pinecone
+pinecone
