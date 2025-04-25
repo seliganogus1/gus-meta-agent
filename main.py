@@ -7,7 +7,7 @@ import os
 
 app = Flask(__name__)
 
-# Variáveis de ambiente (Render configura via painel)
+# Variáveis de ambiente
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 PINECONE_INDEX = os.getenv("PINECONE_INDEX", "chatbotgus")
@@ -37,4 +37,5 @@ def chat():
     return render_template("chat.html", question=None, answer=None)
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=10000)
+    port = int(os.environ.get("PORT", 10000))  # Ajuste obrigatório pro Railway
+    app.run(debug=True, host="0.0.0.0", port=port)
